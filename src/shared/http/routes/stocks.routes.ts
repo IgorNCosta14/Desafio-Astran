@@ -1,7 +1,10 @@
 import { Router } from "express";
+import { FindStockByNameController } from "../../../modules/stocks/useCases/FindStockByNameController";
 
 const stocksRoutes = Router();
 
-stocksRoutes.get("/:stock_name/quote", () => console.log("hello world"));
+const findStockByNameController = new FindStockByNameController()
+
+stocksRoutes.get("/:stock_name/quote", findStockByNameController.handle);
 
 export { stocksRoutes };
