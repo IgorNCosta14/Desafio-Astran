@@ -1,9 +1,10 @@
+import { IFindStockDTO } from "../../../modules/stocks/dtos/IFindStockDTO";
 import { IStocksProvider } from "./IStocksProvider"
 const alpha = require('alphavantage')({ key: 'MDMEJX46EYP052S5' })
 
 class StocksProvider implements IStocksProvider {
 
-    public async fetch(stock_name: string) {
+    public async fetch(stock_name: string): Promise<IFindStockDTO> {
         const stock = await alpha.data.quote(stock_name);
 
         const stockData = {
@@ -12,7 +13,7 @@ class StocksProvider implements IStocksProvider {
             pricedAt: (new Date()).toISOString() 
         }
         
-        return stockData
+        return stockData;
     }
 }
 
