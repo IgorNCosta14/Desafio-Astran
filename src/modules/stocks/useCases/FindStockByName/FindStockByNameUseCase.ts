@@ -11,8 +11,15 @@ export class FindStockByNameUseCase {
 
     async execute(stock_name: string): Promise<IFindStockDTO>{   
  
-        const stocksData = await this.stocksProvider.fetchQuote(stock_name)
+        const stock = await this.stocksProvider.fetchQuote(stock_name)
 
-        return stocksData;
+        const stockData = {
+            name: stock["Global Quote"]["01. symbol"],
+            lastPrice: parseFloat(stock["Global Quote"]["05. price"]),
+            pricedAt: (new Date()).toISOString()
+        }
+        
+        return stockData;
+
     }
 }
