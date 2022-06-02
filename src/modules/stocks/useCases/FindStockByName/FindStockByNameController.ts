@@ -2,8 +2,8 @@ import { Request, Response } from "express"
 import { container } from "tsyringe";
 import { FindStockByNameUseCase } from "./FindStockByNameUseCase";
 
-class FindStockByNameController {
-    async handle(request: Request, response: Response) {
+export class FindStockByNameController {
+    async handle(request: Request, response: Response): Promise<Response> {
         const { stock_name } = request.params;
 
         const findStockByNameUseCase = container.resolve(FindStockByNameUseCase);
@@ -13,5 +13,3 @@ class FindStockByNameController {
         return response.status(201).json(stockData)
     }
 }
-
-export { FindStockByNameController }
