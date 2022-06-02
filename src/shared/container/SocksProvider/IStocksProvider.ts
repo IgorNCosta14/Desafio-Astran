@@ -1,11 +1,15 @@
-import { IFindStockDTO, IGetHistoricDTO } from "../../../modules/stocks/dtos/IStockDTO";
+import { IFindStockResponseDTO, IMultipleQuotesDTO, IStockHistoricResponseDTO } from "../../../modules/stocks/dtos/IStockDTO";
 
 export interface IResponse {
-    name: string,
-    prices: []
+    'Meta Data': {}
+    'Time Series (Daily)': {}
+}
+
+export interface IMultipleQuotesResponse {
+    lastPrices: []
 }
 
 export interface IStocksProvider {
-    fetchQuote(stock_name: string): Promise<IFindStockDTO>,
-    fetchHistoric({stock_name, from, to}: IGetHistoricDTO): Promise<IResponse>
+    fetchQuote(stock_name: string): Promise<IFindStockResponseDTO>,
+    fetchHistoric(stock_name: string): Promise<IStockHistoricResponseDTO>,
 }
