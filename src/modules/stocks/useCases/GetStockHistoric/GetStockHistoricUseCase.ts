@@ -17,10 +17,8 @@ export class GetStockHistoricUseCase {
         private stocksProvider: IStocksProvider
     ) {}
 
-    async execute({stock_name, from, to}: IGetHistoricDTO) {
+    async execute({stock_name, from, to}: IGetHistoricDTO): Promise<any> {
         const stockHistoric = await this.stocksProvider.fetchHistoric(stock_name)
-
-        console.log(stockHistoric)
 
         const stockHistoricData = {
             name: stockHistoric["Meta Data"]["2. Symbol"],
