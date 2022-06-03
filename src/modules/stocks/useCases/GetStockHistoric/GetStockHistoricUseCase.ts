@@ -3,11 +3,11 @@ import { IStocksProvider } from "../../../../shared/container/StocksProvider/ISt
 import { IGetHistoricDTO } from "../../dtos/IStockDTO";
 
 interface IPricing {
-    opening: string,
-    low: string,
-    high: string,
-    closing: string,
-    pricedAt: string
+    opening: number,
+    low: number,
+    high: number,
+    closing: number,
+    pricedAt: string,
 }
 
 interface IStockHistoricData {
@@ -25,7 +25,7 @@ export class GetStockHistoricUseCase {
     async execute({stock_name, from, to}: IGetHistoricDTO): Promise<IStockHistoricData> {
         const stockHistoric = await this.stocksProvider.fetchHistoric(stock_name)
 
-        const stockHistoricData = {
+        const stockHistoricData: IStockHistoricData = {
             name: stockHistoric["Meta Data"]["2. Symbol"],
             prices: []
         }

@@ -11,6 +11,6 @@ export class CompareStocksController {
 
         const lastPrices = await compareStocksUseCase.execute({stock_name, stocks})
 
-        return response.status(201).json({lastPrices})
+        return response.status(201).json(lastPrices)
     }
 }
