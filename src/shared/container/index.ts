@@ -1,5 +1,5 @@
 import { container } from "tsyringe";
-import { IStocksProvider } from "./SocksProvider/IStocksProvider";
-import { StocksProvider } from "./SocksProvider/implementations/StocksProvider";
+import { IStocksProvider } from "./StocksProvider/IStocksProvider";
+import { StocksProvider } from "./StocksProvider/implementations/StocksProvider";
 
 container.register<IStocksProvider>("StocksProvider",StocksProvider)

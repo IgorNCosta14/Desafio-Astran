@@ -1,5 +1,5 @@
 import { inject, injectable } from "tsyringe";
-import { IStocksProvider } from "../../../../shared/container/SocksProvider/IStocksProvider";
+import { IStocksProvider } from "../../../../shared/container/StocksProvider/IStocksProvider";
 import { IGetHistoricDTO } from "../../dtos/IStockDTO";
 
 interface IPricing {

@@ -1,7 +1,7 @@
 import { IFindStockResponseDTO, IMultipleQuotesDTO, IStockHistoricResponseDTO } from "../../../../modules/stocks/dtos/IStockDTO";
-import { IMultipleQuotesResponse, IStocksProvider } from "../IStocksProvider";
+import { IStocksProvider } from "../IStocksProvider";
 
-const alpha = require('alphavantage')({ key: 'MDMEJX46EYP052S5' })
+const alpha = require('alphavantage')({ key: `${process.env.API_KEY}` })
 
 class StocksProvider implements IStocksProvider {
     public async fetchQuote(stock_name: string): Promise<IFindStockResponseDTO> {
