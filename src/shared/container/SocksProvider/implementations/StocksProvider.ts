@@ -11,7 +11,7 @@ class StocksProvider implements IStocksProvider {
     }
 
     public async fetchHistoric(stock_name: string): Promise<IStockHistoricResponseDTO> {
-        const stockHistoric = await alpha.data.daily(stock_name)
+        const stockHistoric = await alpha.data.daily(stock_name, "full")
 
         return stockHistoric;
     }
