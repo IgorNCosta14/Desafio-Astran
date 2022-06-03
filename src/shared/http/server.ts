@@ -1,9 +1,11 @@
 import "reflect-metadata";
-
+ 
 import express, { NextFunction, Request, Response } from "express";
 import { AppError } from "../errors/AppError";
+
 import { router } from "./routes";
 import "../container";
+
 
 const app = express();
 
