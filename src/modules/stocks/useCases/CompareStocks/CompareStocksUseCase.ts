@@ -1,6 +1,7 @@
 import { inject, injectable } from "tsyringe";
 import { IStocksProvider } from "../../../../shared/container/SocksProvider/IStocksProvider";
-import { IFindStockDTO as lastPrice, IMultipleQuotesDTO } from "../../dtos/IStockDTO"
+import { AppError } from "../../../../shared/errors/AppError";
+import { IMultipleQuotesDTO } from "../../dtos/IStockDTO"
 
 @injectable()
 export class CompareStocksUseCase {
@@ -9,7 +10,11 @@ export class CompareStocksUseCase {
         private stocksProvider: IStocksProvider
     ) {}
 
-    async execute({stock_name, stocks}: IMultipleQuotesDTO): Promise<any> {
+    async execute({stock_name, stocks}: IMultipleQuotesDTO): Promise<{}[]> {
+        if(stocks.length === 0) {
+            throw new AppError('error2')
+        }
+
         const lastPrices = [] ;
 
         const stock = await this.stocksProvider.fetchQuote(stock_name)
@@ -24,7 +29,6 @@ export class CompareStocksUseCase {
 
         for (const value of stocks) {
 
-            
             const stock = await this.stocksProvider.fetchQuote(value)
 
             const pricing = {
