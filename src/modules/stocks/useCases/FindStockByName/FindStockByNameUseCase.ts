@@ -13,6 +13,10 @@ export class FindStockByNameUseCase {
     async execute(stock_name: string): Promise<IFindStockDTO>{
             const stock = await this.stocksProvider.fetchQuote(stock_name)
 
+            if(Object.keys(stock["Global Quote"]).length === 0) {
+                throw new AppError("Stock not found!", 404)
+            } 
+
             const stockData = {
                 name: stock["Global Quote"]["01. symbol"],
                 lastPrice: parseFloat(stock["Global Quote"]["05. price"]),

@@ -3,7 +3,7 @@ import { IStocksProvider } from "../../../../shared/container/StocksProvider/ISt
 import { AppError } from "../../../../shared/errors/AppError";
 import { IMultipleQuotesDTO } from "../../dtos/IStockDTO"
 
-interface ILastPrices {
+export interface ILastPrices {
     name: string,
     lastPrice: number,
     pricedAt: string,
@@ -24,8 +24,12 @@ export class CompareStocksUseCase {
         const lastPricesResponse: ILastPricesResponse = {
             lastPrices: []
         };
-
+        
         const stock = await this.stocksProvider.fetchQuote(stock_name)
+
+        if(Object.keys(stock["Global Quote"]).length === 0) {
+            throw new AppError("Stock not found!", 404)
+        }
 
         const stockData = {
             name: stock["Global Quote"]["01. symbol"],
@@ -34,14 +38,16 @@ export class CompareStocksUseCase {
         }
 
         lastPricesResponse.lastPrices.push(stockData)
+        
+        if(stocks.length === 0) {
+            throw new AppError("Stocks for comparison cannot be empty")
+        }
 
         for (const value of stocks) {
 
             const stock = await this.stocksProvider.fetchQuote(value)
 
-            if(stocks.length === 0) {
-                throw new AppError("stocks não pode estar vazio")
-            }
+            
 
             const pricing = {
                 name: stock["Global Quote"]["01. symbol"],
