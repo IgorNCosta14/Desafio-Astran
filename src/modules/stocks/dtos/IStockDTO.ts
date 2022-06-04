@@ -12,15 +12,15 @@ export interface IGetHistoricDTO {
 
 export interface IMultipleQuotesDTO {
     stock_name: string,
-    stocks: []
+    stocks: string[]
 }
 
-interface timeSeries {
-    '1. open': string,
-    '2. high': string,
-    '3. low': string,
-    '4. close': string,
-    '5. volume': string
+interface ITimeSeries {
+    '1. open': number,
+    '2. high': number,
+    '3. low': number,
+    '4. close': number,
+    '5. volume': number
 }
 
 export interface IStockHistoricResponseDTO {
@@ -31,7 +31,7 @@ export interface IStockHistoricResponseDTO {
       '4. Output Size': string,
       '5. Time Zone': string,
     },
-    'Time Series (Daily)': timeSeries
+    'Time Series (Daily)': ITimeSeries 
 }
 
 export interface IFindStockResponseDTO {
