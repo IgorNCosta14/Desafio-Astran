@@ -32,3 +32,18 @@ $ docker-compose up
 It should be running on `http://localhost:3333`
 
 <br>
+
+## Frontend
+
+To start the application, navigate to `web` folder and run the start script.
+
+```bash
+# on project root folder
+$ cd web
+
+# install dependencies
+$ yarn
+
+# start script
+$ yarn dev
+```
