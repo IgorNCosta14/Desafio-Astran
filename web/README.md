@@ -1,6 +1,6 @@
 # Astran-challenge - frontend
 
-An API for searching stocks, searching stock history, comparing stocks and projecting the earnings of a stock.
+An application for searching stocks, searching stock history, comparing stocks and projecting the earnings of a stock.
 
 ## Installation
 
