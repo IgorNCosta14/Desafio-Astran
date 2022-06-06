@@ -43,6 +43,7 @@ $ yarn docker-compose up
 $ yarn test
 ```
 
+
 # API routes and examples
 
 ## Find stock by name
