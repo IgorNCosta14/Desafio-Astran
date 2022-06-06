@@ -47,3 +47,33 @@ $ yarn
 # start script
 $ yarn dev
 ```
+
+# API routes
+
+## Find stock by name
+
+`// get http://localhost:3333/stocks/:stock_name/quote`
+
+- `stock_name`: "IBM"
+
+
+## Get stock historic
+```json
+// get http://localhost:3333/stocks/:stock_name/history
+
+
+```
+
+## Compare stocks
+```json
+// post http://localhost:3333/stocks/:stock_name/compare
+
+
+```
+
+## Get gains projection
+```json
+// get http://localhost:3333/stocks/:stock_name/gains
+
+
+```
