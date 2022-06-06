@@ -1,12 +1,7 @@
 import { inject, injectable } from "tsyringe";
 import { IStocksProvider } from "../../../../shared/container/StocksProvider/IStocksProvider";
 import { AppError } from "../../../../shared/errors/AppError";
-
-export interface IGainsProjectionRequest {
-    stock_name: string, 
-    purchasedAmount: string, 
-    purchasedAt: string,
-}
+import { IGainsProjectionDTO } from "../../dtos/IStockDTO";
 
 interface IResponse {
     name: string,
@@ -24,7 +19,7 @@ export class GetGainsProjectionUseCase {
         private stocksProvider: IStocksProvider
     ) {}
     
-    async execute({stock_name, purchasedAmount , purchasedAt}: IGainsProjectionRequest): Promise<IResponse> {
+    async execute({stock_name, purchasedAmount , purchasedAt}: IGainsProjectionDTO): Promise<IResponse> {
         const stockNow = await this.stocksProvider.fetchQuote(stock_name)
 
         if(Object.keys(stockNow["Global Quote"]).length === 0) {

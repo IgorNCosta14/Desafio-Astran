@@ -11,7 +11,7 @@ interface IPricing {
     pricedAt: string,
 }
 
-interface IStockHistoricData {
+interface IResponse {
     name: string,
     prices: IPricing[]
 }
@@ -23,11 +23,11 @@ export class GetStockHistoricUseCase {
         private stocksProvider: IStocksProvider
     ) {}
 
-    async execute({stock_name, from, to}: IGetHistoricDTO): Promise<IStockHistoricData> {
+    async execute({stock_name, from, to}: IGetHistoricDTO): Promise<IResponse> {
         try {
             const stockHistoric = await this.stocksProvider.fetchHistoric(stock_name);
 
-            const stockHistoricData: IStockHistoricData = {
+            const stockHistoricData: IResponse = {
                 name: stockHistoric["Meta Data"]["2. Symbol"],
                 prices: []
             }

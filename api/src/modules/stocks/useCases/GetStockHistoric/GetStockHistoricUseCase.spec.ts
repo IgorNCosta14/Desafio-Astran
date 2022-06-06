@@ -16,7 +16,7 @@ describe("Get stock historic", () => {
         getStockHistoricUseCase = new GetStockHistoricUseCase(testStockProvider);
     })
 
-    it("should be able to get the historic of a stock", async () => {
+    it("Should be able to get the historic of a stock", async () => {
         const historic = await getStockHistoricUseCase.execute({stock_name: "IBM", from: "2019-01-01", to: "2019-01-02"})
 
         expect(historic).toHaveProperty("name");

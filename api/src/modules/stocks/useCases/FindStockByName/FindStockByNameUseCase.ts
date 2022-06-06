@@ -1,7 +1,12 @@
 import { inject, injectable } from "tsyringe"
 import { IStocksProvider } from "../../../../shared/container/StocksProvider/IStocksProvider"
 import { AppError } from "../../../../shared/errors/AppError";
-import { IFindStockDTO } from "../../dtos/IStockDTO";
+
+export interface IResponse { 
+    name: string;
+    lastPrice: number;
+    pricedAt: string;
+}
 
 @injectable()
 export class FindStockByNameUseCase {
@@ -10,7 +15,7 @@ export class FindStockByNameUseCase {
         private stocksProvider: IStocksProvider
     ) {}
 
-    async execute(stock_name: string): Promise<IFindStockDTO>{
+    async execute(stock_name: string): Promise<IResponse>{
             const stock = await this.stocksProvider.fetchQuote(stock_name)
 
             if(Object.keys(stock["Global Quote"]).length === 0) {

@@ -1,9 +1,3 @@
-export interface IFindStockDTO { 
-    name: string;
-    lastPrice: number;
-    pricedAt: string;
-}
-
 export interface IGetHistoricDTO { 
     stock_name: string, 
     from: string, 
@@ -47,5 +41,11 @@ export interface IFindStockResponseDTO {
         '09. change': string,
         '10. change percent': string
     }
+}
+
+export interface IGainsProjectionDTO {
+    stock_name: string, 
+    purchasedAmount: string, 
+    purchasedAt: string,
 }
 

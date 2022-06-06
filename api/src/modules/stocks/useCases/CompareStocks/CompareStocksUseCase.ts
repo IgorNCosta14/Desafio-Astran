@@ -9,7 +9,7 @@ export interface ILastPrices {
     pricedAt: string,
 }
 
-interface ILastPricesResponse {
+interface IResponse {
     lastPrices: ILastPrices[]
 }
 
@@ -20,8 +20,8 @@ export class CompareStocksUseCase {
         private stocksProvider: IStocksProvider
     ) {}
 
-    async execute({stock_name, stocks}: IMultipleQuotesDTO): Promise<ILastPricesResponse> {
-        const lastPricesResponse: ILastPricesResponse = {
+    async execute({stock_name, stocks}: IMultipleQuotesDTO): Promise<IResponse> {
+        const lastPricesResponse: IResponse = {
             lastPrices: []
         };
         

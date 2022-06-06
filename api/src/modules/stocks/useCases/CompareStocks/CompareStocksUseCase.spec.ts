@@ -1,4 +1,3 @@
-import { strict } from "assert";
 import { StocksProvider } from "../../../../shared/container/StocksProvider/implementations/StocksProvider";
 import { TestStockProvider } from "../../../../shared/container/StocksProvider/implementations/TestStockProvider";
 import { AppError } from "../../../../shared/errors/AppError";

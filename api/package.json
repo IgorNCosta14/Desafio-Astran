@@ -1,5 +1,5 @@
 {
-  "name": "testes",
+  "name": "desafio-astran-api",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
@@ -17,8 +17,7 @@
     "express-async-errors": "^3.1.1",
     "reflect-metadata": "^0.1.13",
     "request": "^2.88.2",
-    "tsyringe": "^4.6.0",
-    "typeorm": "^0.3.6"
+    "tsyringe": "^4.6.0"
   },
   "devDependencies": {
     "@babel/core": "^7.18.2",
