@@ -18,7 +18,7 @@ interface IResponse {
 }
 
 @injectable()
-export class GainsProjectionUseCase {
+export class GetGainsProjectionUseCase {
     constructor(
         @inject("StocksProvider")
         private stocksProvider: IStocksProvider

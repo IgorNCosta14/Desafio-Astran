@@ -1,23 +1,23 @@
 import { StocksProvider } from "../../../../shared/container/StocksProvider/implementations/StocksProvider";
 import { TestStockProvider } from "../../../../shared/container/StocksProvider/implementations/TestStockProvider";
 import { AppError } from "../../../../shared/errors/AppError";
-import { GainsProjectionUseCase } from "./GainsProjectionUseCase";
+import { GetGainsProjectionUseCase } from "./GetGainsProjectionUseCase";
 
 
 let stocksProvider: StocksProvider;
 let testStockProvider: TestStockProvider;
-let gainsProjectionUseCase: GainsProjectionUseCase;
+let getGainsProjectionUseCase: GetGainsProjectionUseCase;
 
 
 describe("Get stock gains projection", () => {
     beforeEach(() => {
         stocksProvider = new StocksProvider();
         testStockProvider = new TestStockProvider()
-        gainsProjectionUseCase = new GainsProjectionUseCase(testStockProvider);
+        getGainsProjectionUseCase = new GetGainsProjectionUseCase(testStockProvider);
     })
 
     it("Should be able to project the gains of a stock", async () => {
-        const projection = await gainsProjectionUseCase.execute({stock_name: "IBM", purchasedAmount: "100", purchasedAt: "2019-01-03"})
+        const projection = await getGainsProjectionUseCase.execute({stock_name: "IBM", purchasedAmount: "100", purchasedAt: "2019-01-03"})
         
         expect(projection).toHaveProperty("name");
         expect(projection.name).toBe("IBM");
@@ -36,11 +36,11 @@ describe("Get stock gains projection", () => {
     })
 
     it("Should not be able to get data if the stock name is invalid", async () => {
-        await expect(gainsProjectionUseCase.execute({stock_name: "testError", purchasedAmount: "100", purchasedAt: "2019-01-03"})).rejects.toEqual(new AppError("Stock not found!", 404));
+        await expect(getGainsProjectionUseCase.execute({stock_name: "testError", purchasedAmount: "100", purchasedAt: "2019-01-03"})).rejects.toEqual(new AppError("Stock not found!", 404));
     })
 
     it("Should not be able to get data if the purchase date was not found", async () => {
-        await expect(gainsProjectionUseCase.execute({stock_name: "IBM", purchasedAmount: "100", purchasedAt: "2019-01-04"})).rejects.toEqual(new AppError("Date not found!", 404));
+        await expect(getGainsProjectionUseCase.execute({stock_name: "IBM", purchasedAmount: "100", purchasedAt: "2019-01-04"})).rejects.toEqual(new AppError("Date not found!", 404));
     })
 
 }) 
