@@ -1,5 +1,16 @@
 # Astran-challenge
 
+- [Astran-challenge](#astran-challenge)
+  - [About](#about)
+- [Running the project](#running-the-project)
+  - [Backend](#backend)
+  - [Frontend](#frontend)
+- [API routes and examples](#api-routes-and-examples)
+  - [Find stock by name](#find-stock-by-name)
+  - [Get stock historic](#get-stock-historic)
+  - [Compare stocks](#compare-stocks)
+  - [Get gains projection](#get-gains-projection)
+
 ## About
 
 A fullstack project made for the [Astran-challenge](https://github.com/Astransat/Desafio-Astran).
@@ -7,6 +18,8 @@ A fullstack project made for the [Astran-challenge](https://github.com/Astransat
 The project's Backend was made using [Node.js](https://nodejs.org/en/) and [Express.js](https://expressjs.com/), the tests were done with [Jest](https://jestjs.io/). The frontend was made with [React.js](https://reactjs.org/) and [TailwindCSS](https://tailwindui.com/).
 
 Both frontend and backend have README explaining its use.
+
+<br>
 
 # Running the project
 
@@ -47,6 +60,8 @@ $ yarn
 # start script
 $ yarn dev
 ```
+
+<br>
 
 # API routes and examples
 
