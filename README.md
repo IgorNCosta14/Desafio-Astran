@@ -52,10 +52,11 @@ $ yarn dev
 
 ## Find stock by name
 
-`// get http://localhost:3333/stocks/:stock_name/quote`
+```
+// get http://localhost:3333/stocks/:stock_name/quote
 
 - `stock_name`: "IBM"
-
+```
 
 ## Get stock historic
 ```json
