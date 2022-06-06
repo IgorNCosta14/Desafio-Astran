@@ -43,11 +43,8 @@ export class CompareStocksUseCase {
             throw new AppError("Stocks for comparison cannot be empty")
         }
 
-        for (const value of stocks) {
-
-            const stock = await this.stocksProvider.fetchQuote(value)
-
-            
+        if(stocks.length === 1) {
+            const stock = await this.stocksProvider.fetchQuote(stocks[0])
 
             const pricing = {
                 name: stock["Global Quote"]["01. symbol"],
@@ -55,7 +52,20 @@ export class CompareStocksUseCase {
                 pricedAt: (new Date()).toISOString()
             }
             lastPricesResponse.lastPrices.push(pricing)
+
+        } else {
+            for (const value of stocks) {
+                const stock = await this.stocksProvider.fetchQuote(value)
+
+                const pricing = {
+                    name: stock["Global Quote"]["01. symbol"],
+                    lastPrice: parseFloat(stock["Global Quote"]["05. price"]),
+                    pricedAt: (new Date()).toISOString()
+                }
+                lastPricesResponse.lastPrices.push(pricing)
+            }
         }
+        
         
         return lastPricesResponse;
     }

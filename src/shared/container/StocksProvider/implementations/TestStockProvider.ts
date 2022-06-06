@@ -2,6 +2,7 @@ import { IFindStockResponseDTO, IStockHistoricResponseDTO } from "../../../../mo
 import { IStocksProvider } from "../IStocksProvider";
 
 export class TestStockProvider implements IStocksProvider {
+    
     async fetchQuote(stock_name: string): Promise<any> {
         const test = {
             'Global Quote': {

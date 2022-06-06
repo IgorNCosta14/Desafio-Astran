@@ -13,7 +13,7 @@ const gainsProjectionController = new GainsProjectionController();
 
 stocksRoutes.get("/:stock_name/quote", findStockByNameController.handle);
 stocksRoutes.get("/:stock_name/history", getStockHistoricController.handle);
-stocksRoutes.get("/:stock_name/compare", compareStocksController.handle);
+stocksRoutes.post("/:stock_name/compare", compareStocksController.handle);
 stocksRoutes.get("/:stock_name/gains", gainsProjectionController.handle);
 
 export { stocksRoutes };
