@@ -19,23 +19,18 @@ $ npm install --global yarn
 
 ## Backend
 
-First navigate to `nest_api` folder then run the docker script.
+First navigate to `api` folder then run the docker script.
 
 ```bash
 # change directory
-$ cd nest_api
+$ cd api
 
 # build project
-$ yarn docker
+$ docker-compose up
 ```
 
 It should be running on `http://localhost:3333`
 
 <br>
 
-Enter the app container console to be able to run others commands.
-
-```bash
-# enter container console
-$ docker exec -it app bash
-```
+Enter the Desafio-ASTRAN-API container console to be able to run others commands.
