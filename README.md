@@ -7,7 +7,7 @@
   - [Frontend](#frontend)
 - [API routes and examples](#api-routes-and-examples)
   - [Find stock by name](#find-stock-by-name)
-  - [Get stock historic](#get-stock-historic)
+  - [Get stock history](#get-stock-history)
   - [Compare stocks](#compare-stocks)
   - [Get gains projection](#get-gains-projection)
 
@@ -75,7 +75,7 @@ input:
 "stock_name": "IBM"
 ```
 
-## Get stock historic
+## Get stock history
 ```
 // get http://localhost:3333/stocks/:stock_name/history?from=<string>&to=<string>
 
