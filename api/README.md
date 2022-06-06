@@ -26,37 +26,14 @@ First, build the project from the docker-compose file.
 
 ```bash
 # build project
-$ yarn docker
-```
-
-Enter the app container console to be able to run others commands.
-
-```bash
-# enter container console
-$ docker exec -it app bash
-```
-
-Then run database migrations to create tables and relations.
-
-```bash
-# run migrations
-$ yarn run-migrations
+$ yarn docker-compose up
 ```
 
 ## Running the app
 
 ```bash
 # development
-$ yarn docker
-
-# watch mode
-$ yarn start:dev
-
-# debug mode
-$ yarn start:debug
-
-# production mode
-$ yarn start:prod
+$ yarn docker-compose up
 ```
 
 ## Test
@@ -64,4 +41,53 @@ $ yarn start:prod
 ```bash
 # unit tests
 $ yarn test
+```
+
+# API routes and examples
+
+## Find stock by name
+
+```
+// get http://localhost:3333/stocks/:stock_name/quote
+
+input:
+
+"stock_name": "IBM"
+```
+
+## Get stock historic
+```
+// get http://localhost:3333/stocks/:stock_name/history?from=<string>&to=<string>
+
+input:
+
+"stock_name": "IBM"
+"from": "2017-04-01" 
+"to": "2017-04-15"
+```
+
+## Compare stocks
+```
+// post http://localhost:3333/stocks/:stock_name/compare
+
+input:
+
+"stock_name": "IBM"
+
+Payload JSON:
+
+{
+  "stocks": ["PETR4.SA", "VALE5.SA"]
+}
+```
+
+## Get gains projection
+```
+// get http://localhost:3333/stocks/:stock_name/gains?purchasedAmount=<number>&purchasedAt=<string>
+
+input:
+
+"stock_name": "IBM"
+"purchasedAmount": 100
+"purchasedAt": "2017-04-01"
 ```
