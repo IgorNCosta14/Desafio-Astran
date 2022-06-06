@@ -48,27 +48,42 @@ $ yarn
 $ yarn dev
 ```
 
-# API routes
+# API routes and examples
 
 ## Find stock by name
 
 ```
 // get http://localhost:3333/stocks/:stock_name/quote
 
-- `stock_name`: "IBM"
+Entrada:
+- "stock_name": "IBM"
 ```
 
 ## Get stock historic
-```json
+```
 // get http://localhost:3333/stocks/:stock_name/history
 
+Entrada:
+
+"stock_name": "PETR4.SA"
+"from": "2017-04-01" 
+"to": "2017-04-15"
 
 ```
 
 ## Compare stocks
-```json
+```
 // post http://localhost:3333/stocks/:stock_name/compare
 
+Entrada:
+
+"stock_name": "PETR4.SA"
+
+json
+
+{
+  "stocks": ["PETR4.SA", "VALE5.SA"]
+}
 
 ```
 
