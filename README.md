@@ -55,41 +55,44 @@ $ yarn dev
 ```
 // get http://localhost:3333/stocks/:stock_name/quote
 
-Entrada:
-- "stock_name": "IBM"
+input:
+
+"stock_name": "IBM"
 ```
 
 ## Get stock historic
 ```
-// get http://localhost:3333/stocks/:stock_name/history
+// get http://localhost:3333/stocks/:stock_name/history?from=<string>&to=<string>
 
-Entrada:
+input:
 
-"stock_name": "PETR4.SA"
+"stock_name": "IBM"
 "from": "2017-04-01" 
 "to": "2017-04-15"
-
 ```
 
 ## Compare stocks
 ```
 // post http://localhost:3333/stocks/:stock_name/compare
 
-Entrada:
+input:
 
-"stock_name": "PETR4.SA"
+"stock_name": "IBM"
 
-json
+Payload JSON:
 
 {
   "stocks": ["PETR4.SA", "VALE5.SA"]
 }
-
 ```
 
 ## Get gains projection
-```json
-// get http://localhost:3333/stocks/:stock_name/gains
+```
+// get http://localhost:3333/stocks/:stock_name/gains?purchasedAmount=<number>&purchasedAt=<string>
 
+input:
 
+"stock_name": "IBM"
+"purchasedAmount": 100
+"purchasedAt": "2017-04-01"
 ```
