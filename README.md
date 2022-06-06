@@ -32,5 +32,3 @@ $ docker-compose up
 It should be running on `http://localhost:3333`
 
 <br>
-
-Enter the Desafio-ASTRAN-API container console to be able to run others commands.
