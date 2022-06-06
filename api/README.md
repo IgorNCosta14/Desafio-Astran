@@ -29,7 +29,7 @@ First, build the project from the docker-compose file.
 $ yarn docker-compose up
 ```
 
-## Running the app
+## Running the API
 
 ```bash
 # development
