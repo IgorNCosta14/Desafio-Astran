@@ -16,7 +16,7 @@ $ yarn
 
 <br>
 
-# App
+# API
 
 ## Running for the first time
 
