@@ -1,15 +1,27 @@
-import GetQuote from "./components/GetQuote";
-import GetHistoric from "./components/GetHistoric";
-import GetGains from "./components/GetGains";
-import GetComparison from "./components/GetComparison";
+import './global.css'
+import { Header } from './components/Header'
+import { GetQuote } from './components/GetQuote'
+import { GetGains } from './components/GetGains'
+import styles from './App.module.css'
+import { GetHistoric } from './components/GetHistoric'
+import { GetComparison } from './components/GetComparison'
 
-export default function App() {
+function App() {
   return (
-    <>
-      <GetQuote />
-      <GetHistoric />
-      <GetGains />
-      <GetComparison />
-    </>
-  );
+    <div className={styles.resSize}>
+      <Header />
+      <div className={styles.appBodyRes}>
+        <div className={styles.appBody}>
+          <div className={styles.wrapper}>
+            <GetQuote />
+            <GetGains />
+          </div>
+          <div><GetHistoric /></div>
+          <div><GetComparison /></div>
+        </div>
+      </div>
+    </div>
+  )
 }
+
+export default App
