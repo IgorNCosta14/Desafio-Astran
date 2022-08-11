@@ -1,0 +1,128 @@
+.getHistoric {
+    padding: 1rem;
+}
+
+.getHistoric {
+    background: var(--gray300);
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+.getHistoricForm {
+    display: flex;
+    flex-direction: column;
+}
+
+.getHistoricForm strong {
+    margin-bottom: 0.5rem;
+}
+
+.getHistoricFormWrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+}
+
+.getHistoricFormWrapperTextarea {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+.getHistoricFormWrapperDate {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    width: 70%;
+}
+
+.getHistoricFormWrapperDate textarea {
+    display: flex;
+    width: 100%;
+}
+
+.getHistoricFormWrapper button {
+    padding: 0.5rem;
+    background: var(--blue200);
+    justify-content: center;
+    align-content: center;
+    border-radius: 8px;
+    border-color: transparent;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.getHistoricFormWrapper button:hover {
+    background: var(--blue100);
+}
+
+.getHistoricFormWrapper textarea {
+    display: flex;
+    border-radius: 8px;
+    border-color: transparent;
+    outline: none;
+    padding: 0.5rem;
+    background: var(--gray200);
+    resize: none;
+    height: 2.1875rem;
+}
+
+.getHistoricReturn {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+}
+
+.getHistoricReturnButtons {
+    display: flex;
+    justify-content: center;
+}
+
+.getHistoricReturnButtons button{
+    display: flex;
+    padding: 0.5rem;
+    background: var(--blue200);
+    justify-content: center;
+    align-content: center;
+    border-radius: 8px;
+    border-color: transparent;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    width: 10%;
+}
+
+.getHistoricReturnButtons button:hover {
+    background: var(--blue100);
+}
+
+
+@media (max-width: 768px) {
+    .getHistoricFormWrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .getHistoricFormWrapper button{
+        width: 61.5px;
+    }
+
+    .getHistoricFormWrapperTextarea {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        width: 100%;
+    }
+
+    .getHistoricFormWrapperDate {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        width: 100%;
+    }
+
+    
+}
