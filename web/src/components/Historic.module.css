@@ -1,0 +1,31 @@
+.historic {
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+table {
+    border: 2px solid var(--gray700);
+    width: 800px;
+    height: 200px;
+    background: var(--gray200);
+    border-radius: 8px;
+}
+
+th {
+    border-bottom: 1px solid var(--gray700);
+}
+
+td {
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    table {
+        width: 70%;
+        height: 86%;
+    }
+}
