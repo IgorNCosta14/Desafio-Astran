@@ -1,0 +1,95 @@
+.getGainsBox {
+    width: 50%;
+}
+
+@media (max-width: 768px) {
+    .getGainsBox {
+        width: 100%;
+    }
+}
+
+.getGains {
+    background: var(--gray300);
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+.getGainsForm{
+    display: flex;
+    flex-direction: column;
+}
+
+.getGainsForm strong {
+    margin-bottom: 0.5rem;
+}
+
+.getGainsForm button {
+    padding: 0.5rem;
+    background: var(--blue200);
+    justify-content: center;
+    align-content: center;
+    border-radius: 8px;
+    border-color: transparent;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.getGainsForm button:hover {
+    background: var(--blue100);
+}
+
+.getGainsFormWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.5rem;
+}
+
+.getGainsFormWrapper textarea {
+    display: flex;
+    border-radius: 8px;
+    /* border-color: var(--gray700); */
+    border-color: transparent;
+    outline: none;
+    padding: 0.5rem;
+    background: var(--gray200);
+    resize: none;
+    height: 2.1875rem;
+    width: 100%;
+}
+
+.getGainsFormWrapper button {
+    padding: 0.5rem;
+    background: var(--blue200);
+    justify-content: center;
+    align-content: center;
+    border-radius: 8px;
+    /* border-color: var(--gray700); */
+    border-color: transparent;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.getGainsFormWrapper button:hover {
+    background: var(--blue100);
+}
+
+.getGainsReturn {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background: var(--gray200);
+    border-radius: 8px;
+    padding: 0.5rem;
+}
+
+.getGainsReturnButtons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.getGainsReturnButtons button {
+    padding: 0.25rem;
+}
