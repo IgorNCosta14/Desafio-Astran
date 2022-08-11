@@ -1,0 +1,38 @@
+.resSize {
+    display: flex;
+    flex-direction: column;
+}
+
+.appBodyRes {
+    display: flex;
+    justify-content: center;
+}
+
+.appBody {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    justify-content: center;
+    margin-top:  80px;
+    width: 90rem;
+}
+
+.appBody > div{
+    margin-bottom: 1rem;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+textarea {
+    overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    .wrapper {
+        display: block;
+    }
+}
